@@ -11,5 +11,16 @@ import { Component } from '@angular/core';
   `]
 })
 export class AppComponent {
+  showToggleMessage = false;
+  messageLog = [];
 
+
+  onToggleDetail() {
+    console.log("Toggling");
+
+    this.showToggleMessage = !this.showToggleMessage
+    this.messageLog.push(this.messageLog.length + 1);
+    console.table(this.messageLog);
+
+  }
 }

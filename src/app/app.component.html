@@ -4,10 +4,21 @@
       <h3>App Component</h3>
       <hr>
       <app-servers></app-servers>
-      <app-warning-alert>
+      <!-- <app-warning-alert>
 
       </app-warning-alert>
-      <app-success-alert></app-success-alert>
+      <app-success-alert></app-success-alert> -->
+      <!-- <button class="btn btn-primary" (click)="showToggleMessage=!showToggleMessage">Display Message Toggle</button> -->
+
+      <button class="btn btn-primary" (click)="onToggleDetail()">Display Message Toggle</button>
+      <p *ngIf="showToggleMessage">This is the message to toggle!!</p>
+
+      
+      <div 
+      *ngFor="let logItem of messageLog"
+      [ngStyle]="{backgroundColor: logItem >= 5 ? 'lightblue' : 'transparent'}"
+      [ngClass]="{'white-text': logItem >=5}"
+      > {{logItem }} </div>
     </div>
   </div>
 </div>
